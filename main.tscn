@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://blfxxb66ypa2d"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7dm0k"]
+
+[node name="Node3D" type="Node3D" unique_id=1039855148]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=748347359]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=35381723]
+mesh = SubResource("CapsuleMesh_7dm0k")
 [sub_resource type="PrismMesh" id="PrismMesh_7dm0k"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
