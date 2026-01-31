@@ -22,6 +22,7 @@ namespace MainRaycaster
         [Export] Camera3D mainCamera;
         [Export] bool castToCenterScreen = false;
         [Export(PropertyHint.Layers3DPhysics)] private uint castableMask;
+        [Export] float castDistance = 5f;
         [ExportGroup("Optional")]
         [Export] Node planeNode;
 
@@ -69,7 +70,7 @@ namespace MainRaycaster
             }
             
 
-            var rayQuery = PhysicsRayQueryParameters3D.Create(cameraOrigin, cameraOrigin + cameraNormal * 100f);
+            var rayQuery = PhysicsRayQueryParameters3D.Create(cameraOrigin, cameraOrigin + cameraNormal * castDistance);
             rayQuery.CollisionMask = castableMask;
             rayQuery.CollideWithAreas = true;
             rayQuery.HitBackFaces = true;
