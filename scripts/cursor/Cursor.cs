@@ -20,9 +20,7 @@ public partial class Cursor : Control
     public override void _Process(double delta)
     {
         AnimateCursor(delta);
-
-        DU.Log(_visible);
-        Visible = _visible;
+        meshInstance.Visible = _visible;
         _visible = false;
     }
 

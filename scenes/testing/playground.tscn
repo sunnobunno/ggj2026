@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_irm0w"]
 [ext_resource type="PackedScene" uid="uid://utjqs2lnpt2d" path="res://scenes/props/key.tscn" id="3_ojn8x"]
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_irm0w"]
+[ext_resource type="Script" uid="uid://cb2qaqlrhx0ay" path="res://scripts/door/DoorController.cs" id="6_nbqhf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -67,6 +68,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4687138, 0.99999964, -4.59
 
 [node name="Door" type="StaticBody3D" parent="." unique_id=1894568997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.457006, 4.7683716e-07, -4.963271)
+constant_angular_velocity = Vector3(0, 35.5, 0)
+script = ExtResource("6_nbqhf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door" unique_id=686527316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)

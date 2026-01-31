@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_qm46u"]
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_0yxup"]
 [ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_7sxk4"]
+[ext_resource type="Texture2D" uid="uid://c5inaevnnvmw4" path="res://textures/items/key1.png" id="6_ax0r4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qm46u"]
 radius = 0.46778673
@@ -38,5 +39,6 @@ mesh = SubResource("PlaneMesh_eb3d3")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_qm46u")
 script = ExtResource("5_7sxk4")
-scale = 0.48
-speed = 0.85
+scale = 0.4
+speed = 0.4
+frames = Array[Texture2D]([ExtResource("4_0yxup"), ExtResource("6_ax0r4")])

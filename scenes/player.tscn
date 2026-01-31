@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://rmty5lyeyvw3" path="res://textures/cursor/handOpen.png" id="11_d2wvv"]
 [ext_resource type="Script" uid="uid://yta2cf8mk613" path="res://scripts/cursor/Cursor.cs" id="12_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://b772ujyl6aogt" path="res://textures/cursor/handClosed.png" id="13_jej6c"]
+[ext_resource type="Script" uid="uid://cf253n3o3kc4h" path="res://scripts/characterController/Inventory.cs" id="14_f1ej7"]
+[ext_resource type="Script" uid="uid://bq2m3qsw1ce4q" path="res://scripts/characterController/InventoryUI.cs" id="14_oprun"]
+[ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="15_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://c5inaevnnvmw4" path="res://textures/items/key1.png" id="16_fulsm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4r1p"]
 friction = 0.25
@@ -23,6 +27,8 @@ friction = 0.25
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d2wvv"]
 orientation = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_qfm1y"]
 
 [node name="Player" type="RigidBody3D" unique_id=1145453039 node_paths=PackedStringArray("playerInput", "movementComponent", "hoverComponent", "head")]
 axis_lock_angular_x = true
@@ -126,4 +132,23 @@ scale = Vector2(49.73, 49.73)
 mesh = SubResource("PlaneMesh_d2wvv")
 texture = ExtResource("11_d2wvv")
 
+[node name="Inventory" type="Control" parent="CanvasLayer" unique_id=205578513 node_paths=PackedStringArray("inventoryMesh")]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("14_oprun")
+inventoryMesh = NodePath("MeshInstance2D")
+keyFrames = Array[Texture2D]([ExtResource("15_qfm1y"), ExtResource("16_fulsm")])
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer/Inventory" unique_id=1736922356]
+position = Vector2(54.000008, -12.000002)
+rotation = 3.1415927
+scale = Vector2(75.23, 75.23)
+mesh = SubResource("QuadMesh_qfm1y")
+
 [node name="Inventory" type="Node3D" parent="." unique_id=1643111454]
+script = ExtResource("14_f1ej7")
