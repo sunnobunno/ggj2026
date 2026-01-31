@@ -25,9 +25,8 @@ namespace InputControllers
         public static KeyboardEvent LeftPressed;
         public static KeyboardEvent RightPressed;
 
-        public static KeyboardEvent EquipLeftHandPressed;
-
         public static KeyboardEvent JumpPressed;
+        public static KeyboardEvent CrouchPressed;
 
         public override void _Process(double delta)
         {
@@ -41,12 +40,10 @@ namespace InputControllers
                 RightPressed?.Invoke();
 
 
-            if (Input.IsActionJustPressed("EquipLeftHand"))
-                EquipLeftHandPressed?.Invoke();
-
-
             if (Input.IsActionJustPressed("Jump"))
                 JumpPressed?.Invoke();
+            if (Input.IsActionJustPressed("Crouch"))
+                CrouchPressed?.Invoke();
         }
 
         public override void _Input(InputEvent @event)

@@ -28,6 +28,7 @@ namespace PlayerControllers.FirstPerson
         [Export] private float rollSpringStr = 1f;
         [Export] private float rollSpringDamp = 0.1f;
         [Export] private float leftRightRollInfluence = 0.01f;
+        [Export] private float mouseSensitivity = 0.5f;
 
         private float yawPreviousRotation = 0f;
         private Vector3 previousYawDirection;
@@ -61,6 +62,7 @@ namespace PlayerControllers.FirstPerson
 
         private void YawRotate(Vector3 yawDelta)
         {
+            yawDelta *= mouseSensitivity;
             yawGimbal.Rotation += yawDelta;
             this.yawDelta = yawDelta.Y;
             OnYawDeltaRadians?.Invoke(yawDelta);
@@ -68,6 +70,7 @@ namespace PlayerControllers.FirstPerson
 
         private void PitchRotate(Vector3 pitchDelta)
         {
+            pitchDelta *= mouseSensitivity;
             var newRotation = pitchGimbal.Rotation + pitchDelta;
             newRotation = new Vector3(Mathf.Clamp(newRotation.X, Mathf.DegToRad(-89f), Mathf.DegToRad(89f)), 0f, 0f);
             pitchGimbal.Rotation = newRotation;

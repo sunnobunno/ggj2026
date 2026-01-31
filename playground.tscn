@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://bmi76x4v8pfpl" path="res://scripts/input/PlayerInputProcessor.cs" id="4_ynsuh"]
 [ext_resource type="Script" uid="uid://pktwmh743ofd" path="res://scripts/raycaster/Raycaster.cs" id="5_4bqqs"]
 [ext_resource type="Script" uid="uid://blg2i6nh6knf2" path="res://scripts/characterController/HeadController.cs" id="5_o00ia"]
+[ext_resource type="Script" uid="uid://c5jt7a06fw02g" path="res://scripts/input/KeyboardManager.cs" id="5_ynsuh"]
+[ext_resource type="Script" uid="uid://bwrxf5oi53msa" path="res://scripts/input/MouseMovementController.cs" id="6_v7dth"]
+[ext_resource type="Texture2D" uid="uid://dr4x4hanopapi" path="res://textures/hunterceramic4x4195.jpg" id="9_pi42a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_edjgo"]
 
@@ -13,6 +16,8 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
+albedo_texture = ExtResource("9_pi42a")
+uv1_scale = Vector3(11.195, 11.195, 11.195)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m8u5f"]
 size = Vector2(25, 25)
@@ -24,11 +29,18 @@ data = PackedVector3Array(12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5, 
 
 [node name="Player" type="RigidBody3D" parent="." unique_id=2105113696 node_paths=PackedStringArray("playerInput", "movementComponent", "hoverComponent", "head")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5466719, 0)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 script = ExtResource("1_is3ju")
 playerInput = NodePath("InputProcessor")
 movementComponent = NodePath("PhysicsComponents/MovementComponent")
 hoverComponent = NodePath("PhysicsComponents/HoverComponent")
 head = NodePath("Head")
+targetRestingHeight = 1.645
+springStrength = 100.0
+springDamp = 10.0
+jumpStrength = 3.855
+moveAccel = 8.33
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=589052074]
 mesh = SubResource("CapsuleMesh_edjgo")
@@ -48,6 +60,12 @@ script = ExtResource("3_4bqqs")
 [node name="InputProcessor" type="Node3D" parent="Player" unique_id=1866793029]
 script = ExtResource("4_ynsuh")
 
+[node name="KeyboardManager" type="Node3D" parent="Player/InputProcessor" unique_id=878959570]
+script = ExtResource("5_ynsuh")
+
+[node name="MouseMovementController" type="Node3D" parent="Player/InputProcessor" unique_id=496084855]
+script = ExtResource("6_v7dth")
+
 [node name="Raycaster" type="Node3D" parent="Player" unique_id=1010313011 node_paths=PackedStringArray("mainCamera")]
 script = ExtResource("5_4bqqs")
 mainCamera = NodePath("../Head/YawGimbal/PitchGimbal/RollGimbal/Camera3D")
@@ -60,6 +78,9 @@ script = ExtResource("5_o00ia")
 yawGimbal = NodePath("YawGimbal")
 pitchGimbal = NodePath("YawGimbal/PitchGimbal")
 rollGimbal = NodePath("YawGimbal/PitchGimbal/RollGimbal")
+maxRoll = 0.03
+rollSpringStr = 0.01
+mouseSensitivity = 0.25
 
 [node name="YawGimbal" type="Node3D" parent="Player/Head" unique_id=89284124]
 
@@ -68,7 +89,6 @@ rollGimbal = NodePath("YawGimbal/PitchGimbal/RollGimbal")
 [node name="RollGimbal" type="Node3D" parent="Player/Head/YawGimbal/PitchGimbal" unique_id=1480606339]
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head/YawGimbal/PitchGimbal/RollGimbal" unique_id=1441939737]
-transform = Transform3D(-0.07090555, 0, 0.9974831, 0, 1, 0, -0.9974831, 0, -0.07090555, 2.6108027, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1171069478]
 
@@ -81,4 +101,5 @@ shape = SubResource("ConcavePolygonShape3D_is3ju")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=188735956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2638626, 0)
+light_energy = 15.58
 omni_range = 14.391466

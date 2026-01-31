@@ -95,6 +95,13 @@ namespace PhysicsComponents
             Hover();
         }
 
+        public void RecieveProperties(float jumpStrength, float springStr, float springDamp)
+        {
+            this.jumpStrength = jumpStrength;
+            this.hoverSpringStrength = springStr;
+            this.hoverSpringDamping = springDamp;
+        }
+
         private void CastGroundRay()
         {
             

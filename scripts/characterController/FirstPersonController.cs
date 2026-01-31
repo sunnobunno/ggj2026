@@ -61,6 +61,7 @@ namespace PlayerControllers.FirstPerson
             movementComponent.RecieveProperties(MaxSpeed, MoveAccel);
             movementComponent.CustomProcess((float) delta);
 
+            hoverComponent.RecieveProperties(JumpStrength, SpringStrength, SpringDamp);
             hoverComponent.CustomProcess((float) delta);
 
             forceBuffers.ApplyAllForceBuffers();
