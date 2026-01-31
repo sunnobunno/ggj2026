@@ -1,19 +1,12 @@
 [gd_scene format=3 uid="uid://blfxxb66ypa2d"]
 
 [ext_resource type="PackedScene" uid="uid://kk0fhnjjanvm" path="res://scenes/player.tscn" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://besik4wshfi1x" path="res://IMG_7166.jpg" id="1_ig7tw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_texture = ExtResource("1_ig7tw")
-
-[sub_resource type="ImageTexture" id="ImageTexture_h2yge"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_texture = SubResource("ImageTexture_h2yge")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
-material = SubResource("StandardMaterial3D_1bvp3")
-size = Vector2(60, 80)
+[ext_resource type="PackedScene" uid="uid://sxaxhr7bxi2q" path="res://Models/Bookshelf.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dmwh02e2yt3jt" path="res://Models/bowl.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://di1wrtyrvurgo" path="res://Models/Chemical_Large.glb" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bagmksjd3oxwf" path="res://Models/chemical_small.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b2hr5utdebcsw" path="res://Models/Computer_Keyboard.glb" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://cmugiad32sxed" path="res://Models/Computer_Monitor.glb" id="7_5vw27"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lquwl"]
 
@@ -23,13 +16,6 @@ size = Vector2(60, 80)
 
 [node name="Player" parent="." unique_id=1145453039 instance=ExtResource("1_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66681933, 2.877503, 25.23577)
-axis_lock_angular_y = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=328910382]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025129318, 1.0243492, -0.054365158)
-visible = false
-material_override = SubResource("StandardMaterial3D_0xm2m")
-mesh = SubResource("PlaneMesh_7dm0k")
 
 [node name="player" type="MeshInstance3D" parent="." unique_id=1421908060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9702258, 2.0842218, 24.9482)
@@ -303,3 +289,24 @@ size = Vector3(1, 5.847229, 12.4482)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1678516612]
 transform = Transform3D(1, 0, 0, 0, 0.9328404, 0.3602899, 0, -0.3602899, 0.9328404, 0, 9.395482, 0)
+
+[node name="Bookshelf" parent="." unique_id=74765630 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1289425, 2.885448, -7.274334)
+
+[node name="Bowl" parent="." unique_id=1991780008 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.469186, 2.6259744, -17.326033)
+
+[node name="Chemical_Large" parent="." unique_id=1832042744 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(0.5833428, 0, 0.81222606, 0, 1, 0, -0.81222606, 0, 0.5833428, -3.9570956, 3.1551864, 9.115552)
+
+[node name="Chemical_Large2" parent="." unique_id=1212655829 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.56139016, 0, -0.82755125, 0, 1, 0, 0.82755125, 0, -0.56139016, -14.409761, 3.1551864, 7.787836)
+
+[node name="Chemical_Small" parent="." unique_id=1751278842 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.14540967, 0, -0.98937154, 0, 1, 0, 0.98937154, 0, 0.14540967, -11.370072, 1.986275, 16.634678)
+
+[node name="Computer_Keyboard" parent="." unique_id=1313008718 instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9365363, 2.526459, 24.979397)
+
+[node name="Computer_Monitor" parent="." unique_id=1674199807 instance=ExtResource("7_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7841308, 2.983793, 24.953892)
