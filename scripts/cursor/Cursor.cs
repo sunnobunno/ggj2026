@@ -30,6 +30,7 @@ public partial class Cursor : Control
         var node = InstanceFromId(instanceID);
         if (node is IClickable clickable)
         {
+            if (!clickable.IsActive) return;
             _visible = true;
         }
     }

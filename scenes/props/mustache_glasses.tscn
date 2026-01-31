@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://darelvawqm5qu"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_sf6af"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_mtk0o"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_bj35p"]
+[ext_resource type="Texture2D" uid="uid://cg5f05uc6meti" path="res://textures/items/mustacheGlasses0.png" id="4_1dchl"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_dh46r"]
+[ext_resource type="Texture2D" uid="uid://b4xm2hexbttmy" path="res://textures/items/mustacheGlasses1.png" id="6_ov7rh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tf0h"]
+render_priority = 0
+shader = ExtResource("3_bj35p")
+shader_parameter/color = ExtResource("4_1dchl")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="MustacheGlasses" type="Area3D" unique_id=1917651658]
+script = ExtResource("1_sf6af")
+maskType = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=95847957]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1724211320]
+script = ExtResource("2_mtk0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=985983438]
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_5tf0h")
+script = ExtResource("5_dh46r")
+frames = Array[Texture2D]([ExtResource("4_1dchl"), ExtResource("6_ov7rh")])

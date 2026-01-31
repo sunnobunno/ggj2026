@@ -4,6 +4,9 @@ using System;
 
 public partial class Key : Node3D, IClickable
 {
+    bool isActive = true;
+    public bool IsActive { get => isActive; set => isActive = value; }
+    
     public void LeftClick(Vector3? position)
     {
         DU.Log("Clicked");

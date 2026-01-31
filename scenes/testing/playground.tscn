@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://utjqs2lnpt2d" path="res://scenes/props/key.tscn" id="3_ojn8x"]
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_irm0w"]
 [ext_resource type="Script" uid="uid://cb2qaqlrhx0ay" path="res://scripts/door/DoorController.cs" id="6_nbqhf"]
+[ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
+[ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="9_d5d0g"]
+[ext_resource type="Texture2D" uid="uid://c5o0g2chdv0w5" path="res://textures/NPCS/Alien_2.png" id="10_vxqot"]
+[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="11_cisaw"]
+[ext_resource type="Texture2D" uid="uid://kb0cupw4s2xe" path="res://textures/NPCS/Alien_2b.png" id="12_d5d0g"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="13_totjt"]
+[ext_resource type="Script" uid="uid://dibqoyvk8roa7" path="res://scripts/npcs/NPCtextbubble.cs" id="14_msnxs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -28,11 +36,13 @@ shader_parameter/snap = true
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_is3ju"]
 data = PackedVector3Array(12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5, 0, 12.5, -12.5, 0, -12.5, 12.5, 0, -12.5)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nbqhf"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_irm0w"]
 size = Vector3(1.99, 3.545, 0.245)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nbqhf"]
-points = PackedVector3Array(-0.995, -1.7725, -0.1225, -0.995, -1.7725, 0.1225, -0.995, 1.7725, -0.1225, 0.99480534, -1.7725, -0.1225, 0.99480534, -1.7725, 0.1225, -0.995, 1.7725, 0.1225, 0.99480534, 1.7725, -0.1225, 0.99480534, 1.7725, 0.1225)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nbqhf"]
+data = PackedVector3Array(-0.99499995, 1.7724999, 0.122499995, 0.99499995, 1.7724999, 0.122499995, -0.99499995, -1.7724999, 0.122499995, 0.99499995, 1.7724999, 0.122499995, 0.99499995, -1.7724999, 0.122499995, -0.99499995, -1.7724999, 0.122499995, 0.99499995, 1.7724999, -0.122499995, -0.99499995, 1.7724999, -0.122499995, 0.99499995, -1.7724999, -0.122499995, -0.99499995, 1.7724999, -0.122499995, -0.99499995, -1.7724999, -0.122499995, 0.99499995, -1.7724999, -0.122499995, 0.99499995, 1.7724999, 0.122499995, 0.99499995, 1.7724999, -0.122499995, 0.99499995, -1.7724999, 0.122499995, 0.99499995, 1.7724999, -0.122499995, 0.99499995, -1.7724999, -0.122499995, 0.99499995, -1.7724999, 0.122499995, -0.99499995, 1.7724999, -0.122499995, -0.99499995, 1.7724999, 0.122499995, -0.99499995, -1.7724999, -0.122499995, -0.99499995, 1.7724999, 0.122499995, -0.99499995, -1.7724999, 0.122499995, -0.99499995, -1.7724999, -0.122499995, 0.99499995, 1.7724999, 0.122499995, -0.99499995, 1.7724999, 0.122499995, 0.99499995, 1.7724999, -0.122499995, -0.99499995, 1.7724999, 0.122499995, -0.99499995, 1.7724999, -0.122499995, 0.99499995, 1.7724999, -0.122499995, -0.99499995, -1.7724999, 0.122499995, 0.99499995, -1.7724999, 0.122499995, -0.99499995, -1.7724999, -0.122499995, 0.99499995, -1.7724999, 0.122499995, 0.99499995, -1.7724999, -0.122499995, -0.99499995, -1.7724999, -0.122499995)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r0dxp"]
 size = Vector3(2.8, 4.08, 1)
@@ -42,6 +52,25 @@ points = PackedVector3Array(-1.4, -2.04, -0.5, -1.4, -2.04, 0.5, -1.4, 2.04, -0.
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5tf0h"]
 points = PackedVector3Array(-1.4, -2.04, -0.5, -1.4, -2.04, 0.5, -1.4, 2.04, -0.5, 1.399726, -2.04, -0.5, 1.399726, -2.04, 0.5, -1.4, 2.04, 0.5, 1.399726, 2.04, -0.5, 1.399726, 2.04, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nbqhf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r0dxp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5d0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_totjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5d0g"]
+render_priority = 0
+shader = ExtResource("3_irm0w")
+shader_parameter/color = ExtResource("10_vxqot")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
 
 [node name="Playground" type="Node3D" unique_id=2038759060]
 
@@ -67,17 +96,17 @@ omni_range = 14.391466
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4687138, 0.99999964, -4.592779)
 
 [node name="Door" type="StaticBody3D" parent="." unique_id=1894568997]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.457006, 4.7683716e-07, -4.963271)
-constant_angular_velocity = Vector3(0, 35.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.457006, 4.7683716e-07, -4.937438)
+physics_material_override = SubResource("PhysicsMaterial_nbqhf")
 script = ExtResource("6_nbqhf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door" unique_id=686527316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
 mesh = SubResource("BoxMesh_irm0w")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=323640066]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=523241765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
-shape = SubResource("ConvexPolygonShape3D_nbqhf")
+shape = SubResource("ConcavePolygonShape3D_nbqhf")
 
 [node name="Walls" type="StaticBody3D" parent="." unique_id=1620724048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4583554, -4.7683716e-07, -5.3440256)
@@ -97,3 +126,64 @@ mesh = SubResource("BoxMesh_r0dxp")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls" unique_id=969436696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3760295, 1.9193125, 0.3635974)
 shape = SubResource("ConvexPolygonShape3D_5tf0h")
+
+[node name="Table" type="StaticBody3D" parent="." unique_id=1569880441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0086203, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1273937010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4686675, 0)
+mesh = SubResource("BoxMesh_nbqhf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=836243476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4686675, 0)
+shape = SubResource("ConcavePolygonShape3D_r0dxp")
+
+[node name="Table2" type="StaticBody3D" parent="." unique_id=2057900840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0086203, 0, 2.1695995)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table2" unique_id=742748249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4686675, 0)
+mesh = SubResource("BoxMesh_nbqhf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=2075239088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4686675, 0)
+shape = SubResource("ConcavePolygonShape3D_r0dxp")
+
+[node name="GasMask" parent="." unique_id=2128210989 instance=ExtResource("7_r0dxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0228124, 1.5722842, 0.01032871)
+
+[node name="MustacheGlasses" parent="." unique_id=1917651658 instance=ExtResource("8_rr2cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0228124, 1.5722842, 2.1780477)
+
+[node name="NPC" type="StaticBody3D" parent="." unique_id=447272865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8486762, 1.1031139, 5.3392215)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC" unique_id=1598154534]
+shape = SubResource("CapsuleShape3D_d5d0g")
+
+[node name="Billboard" type="Node3D" parent="NPC" unique_id=267219859]
+transform = Transform3D(-0.76025856, 0, 0.6496206, 0, 1, 0, -0.6496206, 0, -0.76025856, 0, 0, 0)
+script = ExtResource("9_d5d0g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC/Billboard" unique_id=664395643]
+transform = Transform3D(2.425, 0, 0, 0, 2.425, 0, 0, 0, 2.425, 0, 0, 0)
+mesh = SubResource("QuadMesh_totjt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_d5d0g")
+script = ExtResource("11_cisaw")
+frames = Array[Texture2D]([ExtResource("10_vxqot"), ExtResource("12_d5d0g")])
+
+[node name="Text Bubbles" type="Node3D" parent="NPC" unique_id=35440847]
+
+[node name="Node3D" type="Node3D" parent="NPC/Text Bubbles" unique_id=665557179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1892097, 0)
+
+[node name="Label3D" type="Label3D" parent="NPC/Text Bubbles/Node3D" unique_id=295986905]
+billboard = 1
+alpha_scissor_threshold = 0.49
+alpha_hash_scale = 0.0
+text = "Testing 123"
+font = ExtResource("13_totjt")
+outline_size = 14
+script = ExtResource("14_msnxs")
+npcText = "Hello.... H. hhI"

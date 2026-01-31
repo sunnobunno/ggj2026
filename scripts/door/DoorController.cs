@@ -4,6 +4,9 @@ using System;
 
 public partial class DoorController : Node3D, IClickable
 {
+    bool isActive = true;
+    public bool IsActive { get => isActive; set => isActive = value; }
+
     public override void _Process(double delta)
     {
         

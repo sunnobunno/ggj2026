@@ -1,28 +1,22 @@
 using Godot;
 using System;
 
-public partial class ItemHover : MeshInstance3D
+public partial class NPCImage : MeshInstance3D
 {
-    [Export] float scale = 0.3f;
-    [Export] float speed = 0.3f;
+    [Export] float speed = 3.5f;
+
     [Export] Texture2D[] frames;
-    
+
     float t = 0;
-    float p = 0;
-    
+
     public override void _Process(double delta)
     {
-        var Yoffset = Mathf.Sin(t) * scale;
-        t += (float)delta * speed;
-
-        Position = new Vector3(0f, Yoffset, 0f);
-
         AnimateKey(delta);
     }
 
     private void AnimateKey(double delta)
     {
-        t += (float)delta * 5f;
+        t += (float)delta * speed;
 
         var frameIndex = (int)t % 2;
         var frame = frames[frameIndex];
