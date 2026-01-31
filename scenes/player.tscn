@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://kk0fhnjjanvm"]
+
+[ext_resource type="Script" uid="uid://bhijvrgbghina" path="res://scripts/characterController/FirstPersonController.cs" id="1_dw050"]
+[ext_resource type="Script" uid="uid://b1awoy12xwod7" path="res://scripts/characterController/physicsComponents/HoverComponent.cs" id="2_b26j0"]
+[ext_resource type="Script" uid="uid://bovt53njsnyc6" path="res://scripts/characterController/physicsComponents/MovementComponent.cs" id="3_n7ghd"]
+[ext_resource type="Script" uid="uid://bmi76x4v8pfpl" path="res://scripts/input/PlayerInputProcessor.cs" id="4_nvl01"]
+[ext_resource type="Script" uid="uid://c5jt7a06fw02g" path="res://scripts/input/KeyboardManager.cs" id="5_ivps1"]
+[ext_resource type="Script" uid="uid://bwrxf5oi53msa" path="res://scripts/input/MouseMovementController.cs" id="6_urp6f"]
+[ext_resource type="Script" uid="uid://pktwmh743ofd" path="res://scripts/raycaster/Raycaster.cs" id="7_bwjto"]
+[ext_resource type="Script" uid="uid://blg2i6nh6knf2" path="res://scripts/characterController/HeadController.cs" id="8_606se"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_edjgo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rupst"]
+
+[node name="Player" type="RigidBody3D" unique_id=1145453039 node_paths=PackedStringArray("playerInput", "movementComponent", "hoverComponent", "head")]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_dw050")
+playerInput = NodePath("InputProcessor")
+movementComponent = NodePath("PhysicsComponents/MovementComponent")
+hoverComponent = NodePath("PhysicsComponents/HoverComponent")
+head = NodePath("Head")
+targetRestingHeight = 1.645
+springStrength = 100.0
+springDamp = 10.0
+jumpStrength = 3.855
+moveAccel = 8.33
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=139983962]
+mesh = SubResource("CapsuleMesh_edjgo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1737765396]
+shape = SubResource("CapsuleShape3D_rupst")
+
+[node name="PhysicsComponents" type="Node3D" parent="." unique_id=1193529285]
+
+[node name="HoverComponent" type="Node3D" parent="PhysicsComponents" unique_id=1245609067]
+script = ExtResource("2_b26j0")
+targetRestingHeight = 1.645
+
+[node name="MovementComponent" type="Node3D" parent="PhysicsComponents" unique_id=158615088]
+script = ExtResource("3_n7ghd")
+
+[node name="InputProcessor" type="Node3D" parent="." unique_id=1134679163]
+script = ExtResource("4_nvl01")
+
+[node name="KeyboardManager" type="Node3D" parent="InputProcessor" unique_id=1889839562]
+script = ExtResource("5_ivps1")
+
+[node name="MouseMovementController" type="Node3D" parent="InputProcessor" unique_id=1741592732]
+script = ExtResource("6_urp6f")
+
+[node name="Raycaster" type="Node3D" parent="." unique_id=1770886926 node_paths=PackedStringArray("mainCamera")]
+script = ExtResource("7_bwjto")
+mainCamera = NodePath("../Head/YawGimbal/PitchGimbal/RollGimbal/Camera3D")
+castToCenterScreen = true
+castableMask = 1
+
+[node name="Head" type="Node3D" parent="." unique_id=1966015192 node_paths=PackedStringArray("yawGimbal", "pitchGimbal", "rollGimbal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6434591, 0)
+script = ExtResource("8_606se")
+yawGimbal = NodePath("YawGimbal")
+pitchGimbal = NodePath("YawGimbal/PitchGimbal")
+rollGimbal = NodePath("YawGimbal/PitchGimbal/RollGimbal")
+maxRoll = 0.03
+rollSpringStr = 0.01
+mouseSensitivity = 0.25
+
+[node name="YawGimbal" type="Node3D" parent="Head" unique_id=1941569561]
+
+[node name="PitchGimbal" type="Node3D" parent="Head/YawGimbal" unique_id=1383266926]
+
+[node name="RollGimbal" type="Node3D" parent="Head/YawGimbal/PitchGimbal" unique_id=1319241999]
+
+[node name="Camera3D" type="Camera3D" parent="Head/YawGimbal/PitchGimbal/RollGimbal" unique_id=23369494]
