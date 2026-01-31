@@ -1,10 +1,12 @@
 using Godot;
 using System;
 
-public partial class NPCtextbubble : Label3D
+public partial class NPCtextbubbleConditional : Label3D
 {
     [Export] string npcText;
-    
+    [Export] string gasMaskText;
+    [Export] string moustacheGlassesText;
+    [Export] string birdMaskText;
 
 
     public override void _Ready()
@@ -15,7 +17,31 @@ public partial class NPCtextbubble : Label3D
 
     public override void _Process(double delta)
     {
-        
+        SwitchText();
+    }
+
+    private void SwitchText()
+    {
+        var currentMask = Inventory.Instance.Mask;
+
+        switch(currentMask)
+        {
+            case Inventory.EquippedMask.None:
+                Text = npcText;
+                break;
+            case Inventory.EquippedMask.GasMask:
+                if (gasMaskText == "") break;
+                Text = gasMaskText;
+                break;
+            case Inventory.EquippedMask.MustacheGlasses:
+                if (moustacheGlassesText == "") break;
+                Text = moustacheGlassesText;
+                break;
+            case Inventory.EquippedMask.BirdMask:
+                if (birdMaskText == "") break;
+                Text = birdMaskText;
+                break;
+        }
     }
 
     private void AnimateText()

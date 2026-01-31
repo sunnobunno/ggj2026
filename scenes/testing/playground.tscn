@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://utjqs2lnpt2d" path="res://scenes/props/key.tscn" id="3_ojn8x"]
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_irm0w"]
 [ext_resource type="Script" uid="uid://cb2qaqlrhx0ay" path="res://scripts/door/DoorController.cs" id="6_nbqhf"]
+[ext_resource type="Script" uid="uid://hmr2xquq4l7e" path="res://scripts/door/MaskDoorController.cs" id="7_goqn8"]
 [ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
 [ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
 [ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="9_d5d0g"]
@@ -13,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="11_cisaw"]
 [ext_resource type="Texture2D" uid="uid://kb0cupw4s2xe" path="res://textures/NPCS/Alien_2b.png" id="12_d5d0g"]
 [ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="13_totjt"]
-[ext_resource type="Script" uid="uid://dibqoyvk8roa7" path="res://scripts/npcs/NPCtextbubble.cs" id="14_msnxs"]
+[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="14_msnxs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -95,16 +96,18 @@ omni_range = 14.391466
 [node name="Key" parent="." unique_id=1454386012 instance=ExtResource("3_ojn8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4687138, 0.99999964, -4.592779)
 
-[node name="Door" type="StaticBody3D" parent="." unique_id=1894568997]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.457006, 4.7683716e-07, -4.937438)
+[node name="KeyDoor" type="Node3D" parent="." unique_id=1117619979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4203625, 0, -4.929587)
+
+[node name="Door" type="StaticBody3D" parent="KeyDoor" unique_id=1894568997]
 physics_material_override = SubResource("PhysicsMaterial_nbqhf")
 script = ExtResource("6_nbqhf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Door" unique_id=686527316]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyDoor/Door" unique_id=686527316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
 mesh = SubResource("BoxMesh_irm0w")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=523241765]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyDoor/Door" unique_id=523241765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
 shape = SubResource("ConcavePolygonShape3D_nbqhf")
 
@@ -124,6 +127,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3760295, 1.9193125, 0.36359
 mesh = SubResource("BoxMesh_r0dxp")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls" unique_id=969436696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3760295, 1.9193125, 0.3635974)
+shape = SubResource("ConvexPolygonShape3D_5tf0h")
+
+[node name="MaskDoor" type="Node3D" parent="." unique_id=1264669075]
+transform = Transform3D(-0.9004707, 0, -0.43491676, 0, 1, 0, 0.43491676, 0, -0.9004707, 2.576266, 2.3841858e-07, 6.6533875)
+
+[node name="MaskDoor" type="StaticBody3D" parent="MaskDoor" unique_id=595375863]
+physics_material_override = SubResource("PhysicsMaterial_nbqhf")
+script = ExtResource("7_goqn8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MaskDoor/MaskDoor" unique_id=1261849875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
+mesh = SubResource("BoxMesh_irm0w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MaskDoor/MaskDoor" unique_id=980310940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9980269, 1.7911804, 0)
+shape = SubResource("ConcavePolygonShape3D_nbqhf")
+
+[node name="Walls2" type="StaticBody3D" parent="." unique_id=839208404]
+transform = Transform3D(-0.9095483, 0, -0.41559827, 0, 1, 0, 0.41559827, 0, -0.9095483, 5.4681067, -4.7683716e-07, 5.761579)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls2" unique_id=2079439913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35055184, 1.9193125, 0.3635974)
+mesh = SubResource("BoxMesh_r0dxp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls2" unique_id=230858694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35055184, 1.9193125, 0.3635974)
+shape = SubResource("ConvexPolygonShape3D_rr2cc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls2" unique_id=1864024497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3760295, 1.9193125, 0.3635974)
+mesh = SubResource("BoxMesh_r0dxp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls2" unique_id=366965689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3760295, 1.9193125, 0.3635974)
 shape = SubResource("ConvexPolygonShape3D_5tf0h")
 
@@ -187,3 +224,5 @@ font = ExtResource("13_totjt")
 outline_size = 14
 script = ExtResource("14_msnxs")
 npcText = "Hello.... H. hhI"
+gasMaskText = "Wowww.. Lookin... Gassy"
+moustacheGlassesText = "OH! sorry mist er.."
