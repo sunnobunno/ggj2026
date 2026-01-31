@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode depth_draw_opaque, depth_prepass_alpha,
 	diffuse_lambert, skip_vertex_transform,
-	specular_disabled;
+	specular_disabled, unshaded;
 
 uniform sampler2D color : filter_nearest;
 uniform sampler2D normal : filter_nearest;

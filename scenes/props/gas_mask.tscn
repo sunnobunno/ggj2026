@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b7sox62nq0sci"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_p4nea"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_hvkwf"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_cocf6"]
+[ext_resource type="Texture2D" uid="uid://dvqnqh3bhkyjl" path="res://textures/items/gasmask0.png" id="4_ef7mh"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_rgaum"]
+[ext_resource type="Texture2D" uid="uid://bkcjbxl6yg8dw" path="res://textures/items/gasmask1.png" id="6_6kse2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4nea"]
+render_priority = 0
+shader = ExtResource("3_cocf6")
+shader_parameter/color = ExtResource("4_ef7mh")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="GasMask" type="Area3D" unique_id=2128210989]
+script = ExtResource("1_p4nea")
+maskType = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1692676494]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=254109946]
+script = ExtResource("2_hvkwf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=1629762549]
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p4nea")
+script = ExtResource("5_rgaum")
+frames = Array[Texture2D]([ExtResource("4_ef7mh"), ExtResource("6_6kse2")])

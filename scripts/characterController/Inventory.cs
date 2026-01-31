@@ -8,11 +8,12 @@ public partial class Inventory : Node3D
         None,
         GasMask,
         BirdMask,
+        MustacheGlasses
     }
 
     public static Inventory Instance;
 
-    EquippedMask mask;
+    EquippedMask mask = EquippedMask.None;
     bool hasKey = false;
 
     public EquippedMask Mask { get => mask; set => mask = value; }
