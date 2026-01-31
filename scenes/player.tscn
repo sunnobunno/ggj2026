@@ -7,15 +7,28 @@
 [ext_resource type="Script" uid="uid://c5jt7a06fw02g" path="res://scripts/input/KeyboardManager.cs" id="5_ivps1"]
 [ext_resource type="Script" uid="uid://bwrxf5oi53msa" path="res://scripts/input/MouseMovementController.cs" id="6_urp6f"]
 [ext_resource type="Script" uid="uid://pktwmh743ofd" path="res://scripts/raycaster/Raycaster.cs" id="7_bwjto"]
+[ext_resource type="Script" uid="uid://ussciqkniyph" path="res://scripts/clickables/ClickHandler.cs" id="7_ur7pv"]
 [ext_resource type="Script" uid="uid://blg2i6nh6knf2" path="res://scripts/characterController/HeadController.cs" id="8_606se"]
+[ext_resource type="Script" uid="uid://coyrkvt7ei25w" path="res://scripts/clickables/ClickablesBridge.cs" id="8_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://rmty5lyeyvw3" path="res://textures/cursor/handOpen.png" id="11_d2wvv"]
+[ext_resource type="Script" uid="uid://yta2cf8mk613" path="res://scripts/cursor/Cursor.cs" id="12_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://b772ujyl6aogt" path="res://textures/cursor/handClosed.png" id="13_jej6c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4r1p"]
+friction = 0.25
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_edjgo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rupst"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_d2wvv"]
+orientation = 2
+
 [node name="Player" type="RigidBody3D" unique_id=1145453039 node_paths=PackedStringArray("playerInput", "movementComponent", "hoverComponent", "head")]
 axis_lock_angular_x = true
+axis_lock_angular_y = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_y4r1p")
 script = ExtResource("1_dw050")
 playerInput = NodePath("InputProcessor")
 movementComponent = NodePath("PhysicsComponents/MovementComponent")
@@ -25,7 +38,8 @@ targetRestingHeight = 1.645
 springStrength = 100.0
 springDamp = 10.0
 jumpStrength = 3.855
-moveAccel = 8.33
+maxSpeed = 2.2
+moveAccel = 8.88
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=139983962]
 mesh = SubResource("CapsuleMesh_edjgo")
@@ -51,11 +65,20 @@ script = ExtResource("5_ivps1")
 [node name="MouseMovementController" type="Node3D" parent="InputProcessor" unique_id=1741592732]
 script = ExtResource("6_urp6f")
 
+[node name="ClickHandler" type="Node3D" parent="InputProcessor" unique_id=918442198 node_paths=PackedStringArray("_raycaster")]
+script = ExtResource("7_ur7pv")
+_raycaster = NodePath("../../Raycaster")
+
+[node name="ClickablesBridge" type="Node3D" parent="InputProcessor" unique_id=1788145620 node_paths=PackedStringArray("_clickHandler")]
+script = ExtResource("8_y4r1p")
+_clickHandler = NodePath("../ClickHandler")
+
 [node name="Raycaster" type="Node3D" parent="." unique_id=1770886926 node_paths=PackedStringArray("mainCamera")]
 script = ExtResource("7_bwjto")
 mainCamera = NodePath("../Head/YawGimbal/PitchGimbal/RollGimbal/Camera3D")
 castToCenterScreen = true
 castableMask = 1
+castDistance = 2.5
 
 [node name="Head" type="Node3D" parent="." unique_id=1966015192 node_paths=PackedStringArray("yawGimbal", "pitchGimbal", "rollGimbal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6434591, 0)
@@ -74,3 +97,33 @@ mouseSensitivity = 0.25
 [node name="RollGimbal" type="Node3D" parent="Head/YawGimbal/PitchGimbal" unique_id=1319241999]
 
 [node name="Camera3D" type="Camera3D" parent="Head/YawGimbal/PitchGimbal/RollGimbal" unique_id=23369494]
+cull_mask = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=526209336]
+
+[node name="Cursor" type="Control" parent="CanvasLayer" unique_id=664683287 node_paths=PackedStringArray("meshInstance")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_3v2ag")
+animationFrames = Array[Texture2D]([ExtResource("11_d2wvv"), ExtResource("13_jej6c")])
+meshInstance = NodePath("MeshInstance2D")
+speed = 3.24
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer/Cursor" unique_id=890876536]
+position = Vector2(-2.9999998, 38.999996)
+rotation = 3.1415927
+scale = Vector2(49.73, 49.73)
+mesh = SubResource("PlaneMesh_d2wvv")
+texture = ExtResource("11_d2wvv")
+
+[node name="Inventory" type="Node3D" parent="." unique_id=1643111454]

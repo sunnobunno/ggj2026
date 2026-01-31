@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://utjqs2lnpt2d"]
+
+[ext_resource type="Script" uid="uid://bmifhpuso46gv" path="res://scripts/items/Key.cs" id="1_7sxk4"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="1_68mu8"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_qm46u"]
+[ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_0yxup"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_7sxk4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qm46u"]
+radius = 0.46778673
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eb3d3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm46u"]
+render_priority = 0
+shader = ExtResource("2_qm46u")
+shader_parameter/color = ExtResource("4_0yxup")
+shader_parameter/base_color = Color(1, 1, 1, 0)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="Key" type="Area3D" unique_id=1418839937]
+script = ExtResource("1_7sxk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=142342762]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("SphereShape3D_qm46u")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=580500589]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_68mu8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=837015829]
+transform = Transform3D(0.525, 0, 0, 0, -2.2948479e-08, -0.525, 0, 0.525, -2.2948479e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_eb3d3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_qm46u")
+script = ExtResource("5_7sxk4")
+scale = 0.48
+speed = 0.85
