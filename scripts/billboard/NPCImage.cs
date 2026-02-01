@@ -7,7 +7,14 @@ public partial class NPCImage : MeshInstance3D
 
     [Export] Texture2D[] frames;
 
+
+    int n;
     float t = 0;
+
+    public override void _Ready()
+    {
+        n = frames.Length;
+    }
 
     public override void _Process(double delta)
     {
@@ -18,7 +25,7 @@ public partial class NPCImage : MeshInstance3D
     {
         t += (float)delta * speed;
 
-        var frameIndex = (int)t % 2;
+        var frameIndex = (int)t % n;
         var frame = frames[frameIndex];
 
         var material = (ShaderMaterial)GetSurfaceOverrideMaterial(0);
