@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kb0cupw4s2xe"
-path.s3tc="res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"
+uid="uid://bg2ito72tnqq7"
+path.s3tc="res://.godot/imported/eve.png-4ab8e9fcf7b947553e249a6b46eac51a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/NPCS/Alien_2b.png"
-dest_files=["res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"]
+source_file="res://textures/NPCS/eve.png"
+dest_files=["res://.godot/imported/eve.png-4ab8e9fcf7b947553e249a6b46eac51a.s3tc.ctex"]
 
 [params]
 

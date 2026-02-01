@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cnh6idpcbhu1x"]
+
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="1_hb8q5"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_ip5qb"]
+[ext_resource type="Texture2D" uid="uid://cvnk5gddafcxr" path="res://textures/NPCS/LORI.png" id="3_60t3i"]
+[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="4_w0t1u"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="5_2x7us"]
+[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="6_06bld"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5d0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_totjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dpokj"]
+render_priority = 0
+shader = ExtResource("2_ip5qb")
+shader_parameter/color = ExtResource("3_60t3i")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 50.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[sub_resource type="Animation" id="Animation_hb8q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Billboard/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pvir7"]
+resource_name = "lori"
+length = 0.2105
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Billboard/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.06666668, 0.099999994, 0.13333336, 0.16666669, 0.19999999, 0.23333335, 0.2666667, 0.3, 0.33333337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, -0.35941082, 0), Vector3(0.1890145, -0.35941082, 0.00082787126), Vector3(0.07070692, -0.35941082, -0.2967503), Vector3(-0.058160935, -0.35941082, -0.0382989), Vector3(0.3084753, -0.35941082, -0.1459241), Vector3(0.114748605, -0.35941082, -9.938888e-05), Vector3(-0.12215027, -0.35941082, -0.23592263), Vector3(0.18628174, -0.35941082, -0.3052638), Vector3(0.17847745, -0.35941082, -0.015010918), Vector3(0.2657753, -0.35941082, -0.24692117), Vector3(0.11321731, -0.35941082, -0.08432738)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aa2ec"]
+_data = {
+&"RESET": SubResource("Animation_hb8q5"),
+&"lori": SubResource("Animation_pvir7")
+}
+
+[node name="PartyGoer7" type="StaticBody3D" unique_id=69478801]
+transform = Transform3D(0.86142534, 0, 0.50788426, 0, 1, 0, -0.50788426, 0, 0.86142534, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1747986549]
+shape = SubResource("CapsuleShape3D_d5d0g")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1825703069]
+transform = Transform3D(-0.76025856, 0, 0.6496206, 0, 1, 0, -0.6496206, 0, -0.76025856, 0, 0, 0)
+script = ExtResource("1_hb8q5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=739652140]
+transform = Transform3D(1.5500008, 0, -1.7881393e-07, 0, 1.55, 0, 1.7881393e-07, 0, 1.5500008, 0, 0, 0)
+mesh = SubResource("QuadMesh_totjt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_dpokj")
+script = ExtResource("4_w0t1u")
+frames = Array[Texture2D]([ExtResource("3_60t3i")])
+
+[node name="Text Bubbles" type="Node3D" parent="." unique_id=1292569415]
+
+[node name="Node3D" type="Node3D" parent="Text Bubbles" unique_id=1523449969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52331746, 0)
+
+[node name="Label3D" type="Label3D" parent="Text Bubbles/Node3D" unique_id=1519142121]
+billboard = 1
+alpha_scissor_threshold = 0.49
+alpha_hash_scale = 0.0
+text = "Testing 123"
+font = ExtResource("5_2x7us")
+outline_size = 14
+script = ExtResource("6_06bld")
+npcText = "ppbpbpbbbbtthh"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1146316835]
+libraries/ = SubResource("AnimationLibrary_aa2ec")
+autoplay = &"lori"
