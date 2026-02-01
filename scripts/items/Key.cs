@@ -4,6 +4,8 @@ using System;
 
 public partial class Key : Node3D, IClickable
 {
+    [Export] AudioStreamPlayer3D player;
+    
     bool isActive = true;
     public bool IsActive { get => isActive; set => isActive = value; }
     
@@ -31,6 +33,7 @@ public partial class Key : Node3D, IClickable
     private void PickUpKey()
     {
         Inventory.Instance.HasKey = true;
+        player.Play();
         QueueFree();
     }
 }

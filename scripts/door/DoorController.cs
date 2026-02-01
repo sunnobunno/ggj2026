@@ -4,6 +4,8 @@ using System;
 
 public partial class DoorController : Node3D, IClickable
 {
+	[Export] AudioStreamPlayer3D doorPlayer;
+	
 	bool isActive = true;
 	public bool IsActive { get => isActive; set => isActive = value; }
 
@@ -15,8 +17,8 @@ public partial class DoorController : Node3D, IClickable
 	private void OpenDoor()
 	{
 		var finalRotation = new Vector3(0f, Mathf.DegToRad(-85f), 0f);
-		
-		var tween = GetTree().CreateTween();
+        doorPlayer.Play();
+        var tween = GetTree().CreateTween();
 		tween.SetTrans(Tween.TransitionType.Spring);
 		tween.SetEase(Tween.EaseType.Out);
 		tween.TweenProperty(this, "rotation", finalRotation, 1f);
