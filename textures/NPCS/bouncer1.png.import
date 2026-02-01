@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kb0cupw4s2xe"
-path.s3tc="res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"
+uid="uid://y17csarpn7jc"
+path.s3tc="res://.godot/imported/bouncer1.png-340d6a9549a7cac5131082e1a1996a87.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/NPCS/Alien_2b.png"
-dest_files=["res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"]
+source_file="res://textures/NPCS/bouncer1.png"
+dest_files=["res://.godot/imported/bouncer1.png-340d6a9549a7cac5131082e1a1996a87.s3tc.ctex"]
 
 [params]
 

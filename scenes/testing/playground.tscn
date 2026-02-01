@@ -7,19 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_irm0w"]
 [ext_resource type="Script" uid="uid://cb2qaqlrhx0ay" path="res://scripts/door/DoorController.cs" id="6_nbqhf"]
 [ext_resource type="Script" uid="uid://hmr2xquq4l7e" path="res://scripts/door/MaskDoorController.cs" id="7_goqn8"]
-[ext_resource type="PackedScene" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
-[ext_resource type="PackedScene" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
-[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="9_d5d0g"]
+[ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
+[ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
 [ext_resource type="PackedScene" uid="uid://bv1eg75qvkksx" path="res://scenes/props/HorseMask.tscn" id="10_ur8j8"]
-[ext_resource type="Texture2D" uid="uid://c5o0g2chdv0w5" path="res://textures/NPCS/Alien_2.png" id="10_vxqot"]
-[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="11_cisaw"]
 [ext_resource type="PackedScene" uid="uid://4b2liutra0di" path="res://scenes/props/pirate_mask.tscn" id="11_j1rmp"]
 [ext_resource type="PackedScene" uid="uid://bleu32wrbfj44" path="res://scenes/props/swirly_mask.tscn" id="12_2qf0b"]
-[ext_resource type="Texture2D" uid="uid://kb0cupw4s2xe" path="res://textures/NPCS/Alien_2b.png" id="12_d5d0g"]
 [ext_resource type="PackedScene" uid="uid://bgry2gyu7c2v5" path="res://scenes/props/swim_mask.tscn" id="13_shx8k"]
-[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="13_totjt"]
 [ext_resource type="PackedScene" uid="uid://202mxbcd3n5n" path="res://scenes/props/bird_mask.tscn" id="14_l4ahx"]
-[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="14_msnxs"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/bouncer.tscn" id="15_ur8j8"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/shady_guy.tscn" id="16_j1rmp"]
+[ext_resource type="PackedScene" uid="uid://cnyk3o7x6xwll" path="res://Models/key_door.tscn" id="17_4roel"]
+[ext_resource type="PackedScene" uid="uid://d33ynlp1itxlh" path="res://Models/wall_door.tscn" id="18_wkd4t"]
+[ext_resource type="PackedScene" uid="uid://kr7bi8j7iq7b" path="res://Models/first_door.tscn" id="19_wkd4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -255,3 +254,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.671983, 1.5722845, -1.04274
 
 [node name="NPC" type="StaticBody3D" parent="." unique_id=447272865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8486762, 1.1031139, 5.3392215)
+
+[node name="Bouncer" parent="." unique_id=204560513 instance=ExtResource("15_ur8j8")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, 3.9392693, 1.2124997, 3.3977547)
+
+[node name="ShadyGuy" parent="." unique_id=896628509 instance=ExtResource("16_j1rmp")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -0.8142816, 1.2125, 4.8109837)
+
+[node name="Wall_door" parent="." unique_id=489180766 instance=ExtResource("17_4roel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5589437, 1.7033825, -6.9795074)
+
+[node name="Wall_door2" parent="." unique_id=550748158 instance=ExtResource("18_wkd4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6551447, 1.7033825, -1.3661867)
+
+[node name="Wall_door3" parent="." unique_id=1690098093 instance=ExtResource("19_wkd4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8282413, 1.7033825, 1.9948605)

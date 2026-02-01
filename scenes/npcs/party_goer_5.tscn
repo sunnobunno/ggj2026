@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bu6yb4eyfsnqk"]
+
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="1_qd44q"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_776d3"]
+[ext_resource type="Texture2D" uid="uid://bis2jvrnfc8jl" path="res://textures/NPCS/Alien_4.png" id="3_hr05e"]
+[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="4_gyrqk"]
+[ext_resource type="Texture2D" uid="uid://6w036knqj77m" path="res://textures/NPCS/Alien_4b.png" id="5_e8ntj"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="6_aa02j"]
+[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="7_hovp3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5d0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_totjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dy4e5"]
+render_priority = 0
+shader = ExtResource("2_776d3")
+shader_parameter/color = ExtResource("3_hr05e")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 50.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="PartyGoer5" type="StaticBody3D" unique_id=19943402]
+transform = Transform3D(0.86142534, 0, 0.50788426, 0, 1, 0, -0.50788426, 0, 0.86142534, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1969051338]
+shape = SubResource("CapsuleShape3D_d5d0g")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=601655133]
+transform = Transform3D(-0.76025856, 0, 0.6496206, 0, 1, 0, -0.6496206, 0, -0.76025856, 0, 0, 0)
+script = ExtResource("1_qd44q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=652449666]
+transform = Transform3D(2.425, 0, 0, 0, 2.425, 0, 0, 0, 2.425, 0, 0, 0)
+mesh = SubResource("QuadMesh_totjt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_dy4e5")
+script = ExtResource("4_gyrqk")
+frames = Array[Texture2D]([ExtResource("3_hr05e"), ExtResource("5_e8ntj")])
+
+[node name="Text Bubbles" type="Node3D" parent="." unique_id=1404866560]
+
+[node name="Node3D" type="Node3D" parent="Text Bubbles" unique_id=133405259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1892097, 0)
+
+[node name="Label3D" type="Label3D" parent="Text Bubbles/Node3D" unique_id=272492842]
+billboard = 1
+alpha_scissor_threshold = 0.49
+alpha_hash_scale = 0.0
+text = "Testing 123"
+font = ExtResource("6_aa02j")
+outline_size = 14
+script = ExtResource("7_hovp3")
+npcText = "ppbpbpbbbbtthh"

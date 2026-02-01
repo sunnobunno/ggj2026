@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kb0cupw4s2xe"
-path.s3tc="res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"
+uid="uid://cvnk5gddafcxr"
+path.s3tc="res://.godot/imported/LORI.png-c6ae27ebdbace7b936f1d2f98929ce53.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/NPCS/Alien_2b.png"
-dest_files=["res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"]
+source_file="res://textures/NPCS/LORI.png"
+dest_files=["res://.godot/imported/LORI.png-c6ae27ebdbace7b936f1d2f98929ce53.s3tc.ctex"]
 
 [params]
 
