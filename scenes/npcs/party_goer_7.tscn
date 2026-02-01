@@ -90,6 +90,8 @@ font = ExtResource("5_2x7us")
 outline_size = 14
 script = ExtResource("6_06bld")
 npcText = "ppbpbpbbbbtthh"
+horseText = "herhehrehe LET US RIDE INTO BATTLE"
+pirateText = "are ya lookin for any rats to join your crew"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1146316835]
 libraries/ = SubResource("AnimationLibrary_aa2ec")
