@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://1caynomy61y4"]
+
+[ext_resource type="ArrayMesh" uid="uid://tv8ijoj3y0bi" path="res://Models/TRES/Wall_Basic.tres" id="2_khn8n"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_30dbh"]
+data = PackedVector3Array(-0.5, 1.5403, 2.192, 0.5, 1.5403, -2.192, 0.5, 1.5403, 2.192, -0.5, 1.5403, 2.192, -0.5, 1.5403, -2.192, 0.5, 1.5403, -2.192, -0.5, 1.5403, -2.192, 0.5, -1.5403, -2.192, 0.5, 1.5403, -2.192, -0.5, 1.5403, -2.192, -0.5, -1.5403, -2.192, 0.5, -1.5403, -2.192, -0.5, -1.5403, -2.192, 0.5, -1.5403, 2.192, 0.5, -1.5403, -2.192, -0.5, -1.5403, -2.192, -0.5, -1.5403, 2.192, 0.5, -1.5403, 2.192, -0.5, -1.5403, 2.192, 0.5, 1.5403, 2.192, 0.5, -1.5403, 2.192, -0.5, -1.5403, 2.192, -0.5, 1.5403, 2.192, 0.5, 1.5403, 2.192, 0.5, 1.5403, 2.192, 0.5, -1.5403, -2.192, 0.5, -1.5403, 2.192, 0.5, 1.5403, 2.192, 0.5, 1.5403, -2.192, 0.5, -1.5403, -2.192, -0.5, -1.5403, 2.192, -0.5, 1.5403, -2.192, -0.5, 1.5403, 2.192, -0.5, -1.5403, 2.192, -0.5, -1.5403, -2.192, -0.5, 1.5403, -2.192)
+
+[node name="Wall_basic" type="StaticBody3D" unique_id=1853505673]
+
+[node name="wall" type="MeshInstance3D" parent="." unique_id=1801151332]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = ExtResource("2_khn8n")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=695752599]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_30dbh")
