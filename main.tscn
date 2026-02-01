@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://ivpkvwhfc8sb" path="res://Models/disco_2.tscn" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://84tflrs0v2v2" path="res://Models/Pi7_cropper (1).png" id="17_074og"]
 [ext_resource type="Texture2D" uid="uid://bbeh78811m4pf" path="res://Models/Pi7_cropper.png" id="18_cegan"]
-[ext_resource type="PackedScene" path="res://scenes/props/gas_mask.tscn" id="19_cegan"]
-[ext_resource type="PackedScene" path="res://scenes/props/mustache_glasses.tscn" id="20_82xsv"]
+[ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="19_cegan"]
+[ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://utjqs2lnpt2d" path="res://scenes/props/key.tscn" id="22_d13ii"]
 [ext_resource type="Texture2D" uid="uid://hjjpf1msvtv7" path="res://textures/WARNING-1.png" id="23_0odxb"]
 [ext_resource type="Texture2D" uid="uid://dpkms802odeql" path="res://textures/Since Last-1.png" id="24_lswn8"]
@@ -31,22 +31,22 @@
 [ext_resource type="AudioStream" uid="uid://b6sgrxvgcfc7n" path="res://audio/759772__aprilfern__crowd-chatter-in-indonesian.mp3" id="30_seu75"]
 [ext_resource type="PackedScene" uid="uid://cnyk3o7x6xwll" path="res://Models/key_door.tscn" id="31_htxhm"]
 [ext_resource type="PackedScene" uid="uid://kr7bi8j7iq7b" path="res://Models/first_door.tscn" id="31_seu75"]
-[ext_resource type="PackedScene" uid="uid://dly4o2iphtwiq" path="res://scenes/npcs/party_goer_1.tscn" id="32_wnkbs"]
-[ext_resource type="PackedScene" uid="uid://ba8p2imy0fl48" path="res://scenes/npcs/shady_guy.tscn" id="33_4k2k6"]
-[ext_resource type="PackedScene" uid="uid://3r32pdqp5uh6" path="res://scenes/npcs/party_goer_2.tscn" id="33_f6a44"]
-[ext_resource type="PackedScene" uid="uid://b76g3yc8oibxq" path="res://scenes/npcs/party_goer_3.tscn" id="34_0cbny"]
-[ext_resource type="PackedScene" uid="uid://cb227lt6bmux8" path="res://scenes/npcs/bouncer.tscn" id="34_0rl1p"]
-[ext_resource type="PackedScene" path="res://scenes/props/swim_mask.tscn" id="35_come4"]
-[ext_resource type="PackedScene" uid="uid://nq7w8qdxl8xu" path="res://scenes/npcs/party_goer_4.tscn" id="35_hrvbo"]
-[ext_resource type="PackedScene" path="res://scenes/props/HorseMask.tscn" id="35_ok6jj"]
-[ext_resource type="PackedScene" path="res://scenes/props/bird_mask.tscn" id="36_facbu"]
-[ext_resource type="PackedScene" uid="uid://bu6yb4eyfsnqk" path="res://scenes/npcs/party_goer_5.tscn" id="36_uypp3"]
-[ext_resource type="PackedScene" uid="uid://c1ncxdkd2kscr" path="res://scenes/npcs/party_goer_6.tscn" id="37_blkrb"]
-[ext_resource type="PackedScene" uid="uid://cnh6idpcbhu1x" path="res://scenes/npcs/party_goer_7.tscn" id="38_abqjc"]
-[ext_resource type="PackedScene" path="res://scenes/props/swirly_mask.tscn" id="38_h8e4i"]
-[ext_resource type="PackedScene" path="res://scenes/props/pirate_mask.tscn" id="39_4lmeg"]
-[ext_resource type="PackedScene" uid="uid://bue7rmthwhutf" path="res://scenes/npcs/party_goer_8.tscn" id="39_6iyjs"]
-[ext_resource type="PackedScene" uid="uid://33w1vsk7tbun" path="res://scenes/npcs/party_goer_9.tscn" id="40_4w656"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_1.tscn" id="32_wnkbs"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/shady_guy.tscn" id="33_4k2k6"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_2.tscn" id="33_f6a44"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_3.tscn" id="34_0cbny"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/bouncer.tscn" id="34_0rl1p"]
+[ext_resource type="PackedScene" uid="uid://bgry2gyu7c2v5" path="res://scenes/props/swim_mask.tscn" id="35_come4"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_4.tscn" id="35_hrvbo"]
+[ext_resource type="PackedScene" uid="uid://bv1eg75qvkksx" path="res://scenes/props/HorseMask.tscn" id="35_ok6jj"]
+[ext_resource type="PackedScene" uid="uid://202mxbcd3n5n" path="res://scenes/props/bird_mask.tscn" id="36_facbu"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_5.tscn" id="36_uypp3"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_6.tscn" id="37_blkrb"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_7.tscn" id="38_abqjc"]
+[ext_resource type="PackedScene" uid="uid://bleu32wrbfj44" path="res://scenes/props/swirly_mask.tscn" id="38_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://4b2liutra0di" path="res://scenes/props/pirate_mask.tscn" id="39_4lmeg"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_8.tscn" id="39_6iyjs"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_9.tscn" id="40_4w656"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryguw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1107,10 +1107,14 @@ autoplay = true
 [node name="DanceMusic" type="AudioStreamPlayer3D" parent="Audio" unique_id=2068015501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.566675, 8.362215, -17.29341)
 stream = ExtResource("29_kq58d")
+autoplay = true
+max_distance = 20.0
 
 [node name="PartyPeople" type="AudioStreamPlayer3D" parent="Audio" unique_id=274778958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.797803, 6.2300606, -17.254435)
 stream = ExtResource("30_seu75")
+autoplay = true
+max_distance = 20.0
 
 [node name="First Door" parent="." unique_id=489180766 instance=ExtResource("31_seu75")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.9634438, 2.843258, 18.5)
