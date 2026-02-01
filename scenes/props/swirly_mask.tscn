@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bleu32wrbfj44"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_i4hgd"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_8gtk7"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_tnybj"]
+[ext_resource type="Texture2D" uid="uid://b3b6y0w0an570" path="res://textures/items/swirlyMask0.png" id="4_fgiyo"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_gdewi"]
+[ext_resource type="Texture2D" uid="uid://8j05dvd05sn" path="res://textures/items/swirlyMask1.png" id="6_m0y6l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qf0b"]
+render_priority = 0
+shader = ExtResource("3_tnybj")
+shader_parameter/color = ExtResource("4_fgiyo")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="SwirlyMask" type="Area3D" unique_id=2080052171]
+script = ExtResource("1_i4hgd")
+maskType = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=154499519]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1098722066]
+script = ExtResource("2_8gtk7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=544539936]
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_2qf0b")
+script = ExtResource("5_gdewi")
+frames = Array[Texture2D]([ExtResource("4_fgiyo"), ExtResource("6_m0y6l")])

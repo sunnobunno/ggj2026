@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://4b2liutra0di"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_2vouc"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_mdieq"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_e42q6"]
+[ext_resource type="Texture2D" uid="uid://capgo4srd062o" path="res://textures/items/pirateMask0.png" id="4_3fm2i"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_brcsb"]
+[ext_resource type="Texture2D" uid="uid://b5d0d14bmu1fw" path="res://textures/items/pirateMask1.png" id="6_ri26a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ordw8"]
+render_priority = 0
+shader = ExtResource("3_e42q6")
+shader_parameter/color = ExtResource("4_3fm2i")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="PirateMask" type="Area3D" unique_id=1265222881]
+script = ExtResource("1_2vouc")
+maskType = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855220980]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1469401826]
+script = ExtResource("2_mdieq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=1436416563]
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_ordw8")
+script = ExtResource("5_brcsb")
+frames = Array[Texture2D]([ExtResource("4_3fm2i"), ExtResource("6_ri26a")])

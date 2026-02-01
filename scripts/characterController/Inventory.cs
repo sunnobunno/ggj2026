@@ -8,7 +8,11 @@ public partial class Inventory : Node3D
         None,
         GasMask,
         BirdMask,
-        MustacheGlasses
+        MustacheGlasses,
+        Swirly,
+        Horse,
+        Swim,
+        Pirate
     }
 
     public static Inventory Instance;
