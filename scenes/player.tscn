@@ -17,9 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://b76kx6ova78mn" path="res://textures/overlays/gasmaskOverlay.png" id="12_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://b772ujyl6aogt" path="res://textures/cursor/handClosed.png" id="13_jej6c"]
 [ext_resource type="Script" uid="uid://cf253n3o3kc4h" path="res://scripts/characterController/Inventory.cs" id="14_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://3acmwnuj5j1d" path="res://textures/overlays/birdOverlay.png" id="14_ke2ow"]
 [ext_resource type="Script" uid="uid://bq2m3qsw1ce4q" path="res://scripts/characterController/InventoryUI.cs" id="14_oprun"]
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="15_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://s5vdgrayxrpi" path="res://textures/overlays/swirlyOverlay.png" id="15_ujl30"]
+[ext_resource type="Texture2D" uid="uid://cggbm3e456bwp" path="res://textures/overlays/horseOverlay.png" id="16_31cv2"]
 [ext_resource type="Texture2D" uid="uid://c5inaevnnvmw4" path="res://textures/items/key1.png" id="16_fulsm"]
+[ext_resource type="Texture2D" uid="uid://do0qm3at2ov15" path="res://textures/overlays/swimOverlay.png" id="17_pf23h"]
+[ext_resource type="Texture2D" uid="uid://cd1shvve3ardq" path="res://textures/overlays/pirateOverlay.png" id="18_dt7fs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4r1p"]
 friction = 0.25
@@ -125,7 +130,12 @@ mesh = SubResource("QuadMesh_4r5pv")
 surface_material_override/0 = SubResource("StandardMaterial3D_60mlk")
 script = ExtResource("11_fulsm")
 gasMaskOverlay = ExtResource("12_4r5pv")
+birdMaskOverlay = ExtResource("14_ke2ow")
 mustacheGlassesOverlay = ExtResource("11_60mlk")
+swirlyOverlay = ExtResource("15_ujl30")
+horseOverlay = ExtResource("16_31cv2")
+swimOverlay = ExtResource("17_pf23h")
+pirateOverlay = ExtResource("18_dt7fs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=526209336]
 
