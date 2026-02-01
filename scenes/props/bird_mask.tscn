@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://202mxbcd3n5n"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_l4454"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_ulblg"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_7qh1s"]
+[ext_resource type="Texture2D" uid="uid://b6n0ayl6hakxk" path="res://textures/items/birdMask0.png" id="4_xn08v"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_gdpke"]
+[ext_resource type="Texture2D" uid="uid://by87ijkb7fdqt" path="res://textures/items/birdMask1.png" id="6_cecbe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wla0y"]
+render_priority = 0
+shader = ExtResource("3_7qh1s")
+shader_parameter/color = ExtResource("4_xn08v")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="BirdMask" type="Area3D" unique_id=1388738197]
+script = ExtResource("1_l4454")
+maskType = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1356256423]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1513632138]
+script = ExtResource("2_ulblg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=1792456225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17195559, 0, 0.06208527)
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_wla0y")
+script = ExtResource("5_gdpke")
+frames = Array[Texture2D]([ExtResource("4_xn08v"), ExtResource("6_cecbe")])

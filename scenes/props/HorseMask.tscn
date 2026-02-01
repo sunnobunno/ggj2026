@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bv1eg75qvkksx"]
+
+[ext_resource type="Script" uid="uid://cv604uc4vg5gd" path="res://scripts/items/masks/MaskItem.cs" id="1_vofem"]
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="2_ecjpk"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="3_8o30y"]
+[ext_resource type="Texture2D" uid="uid://cvlof84uh2dfn" path="res://textures/items/horseMask0.png" id="4_cw0lt"]
+[ext_resource type="Script" uid="uid://de3wlfmb45dln" path="res://scripts/billboard/ItemHover.cs" id="5_gjsjm"]
+[ext_resource type="Texture2D" uid="uid://dq1i6oioayxr" path="res://textures/items/horseMask1.png" id="6_k1elb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbqhf"]
+radius = 0.3842447
+
+[sub_resource type="QuadMesh" id="QuadMesh_rr2cc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5dob"]
+render_priority = 0
+shader = ExtResource("3_8o30y")
+shader_parameter/color = ExtResource("4_cw0lt")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="HorseMask" type="Area3D" unique_id=1617692549]
+script = ExtResource("1_vofem")
+maskType = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1219810785]
+shape = SubResource("SphereShape3D_nbqhf")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1880851869]
+script = ExtResource("2_ecjpk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=463805214]
+mesh = SubResource("QuadMesh_rr2cc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_r5dob")
+script = ExtResource("5_gjsjm")
+frames = Array[Texture2D]([ExtResource("4_cw0lt"), ExtResource("6_k1elb")])

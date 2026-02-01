@@ -7,6 +7,10 @@ public partial class NPCtextbubbleConditional : Label3D
     [Export] string gasMaskText;
     [Export] string moustacheGlassesText;
     [Export] string birdMaskText;
+    [Export] string swirlyText;
+    [Export] string horseText;
+    [Export] string swimText;
+    [Export] string pirateText;
 
 
     public override void _Ready()
@@ -30,16 +34,63 @@ public partial class NPCtextbubbleConditional : Label3D
                 Text = npcText;
                 break;
             case Inventory.EquippedMask.GasMask:
-                if (gasMaskText == "") break;
+                if (gasMaskText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
                 Text = gasMaskText;
                 break;
             case Inventory.EquippedMask.MustacheGlasses:
-                if (moustacheGlassesText == "") break;
+                if (moustacheGlassesText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
                 Text = moustacheGlassesText;
                 break;
             case Inventory.EquippedMask.BirdMask:
-                if (birdMaskText == "") break;
+                if (birdMaskText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
                 Text = birdMaskText;
+                break;
+            case Inventory.EquippedMask.Swirly:
+                if (swirlyText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
+                Text = swirlyText;
+                break;
+            case Inventory.EquippedMask.Horse:
+                if (horseText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
+                Text = horseText;
+                break;
+            case Inventory.EquippedMask.Swim:
+                if (swimText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
+                Text = swimText;
+                break;
+            case Inventory.EquippedMask.Pirate:
+                if (pirateText == null)
+                {
+                    Text = npcText;
+                    break;
+                }
+                Text = pirateText;
+                break;
+            default:
+                Text = npcText;
                 break;
         }
     }
