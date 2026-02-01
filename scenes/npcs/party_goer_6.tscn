@@ -52,6 +52,6 @@ text = "Testing 123"
 font = ExtResource("5_eagy4")
 outline_size = 14
 script = ExtResource("6_mi0i3")
-npcText = "ppbpbpbbbbtthh"
+npcText = "hey there good lookin"
 swirlyText = "Happy Birthday! i think"
 pirateText = "*cape billows* wherever yo go ill follow"

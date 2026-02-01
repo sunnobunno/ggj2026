@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://ivpkvwhfc8sb" path="res://Models/disco_2.tscn" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://84tflrs0v2v2" path="res://Models/Pi7_cropper (1).png" id="17_074og"]
 [ext_resource type="Texture2D" uid="uid://bbeh78811m4pf" path="res://Models/Pi7_cropper.png" id="18_cegan"]
-[ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="19_cegan"]
-[ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="20_82xsv"]
+[ext_resource type="PackedScene" path="res://scenes/props/gas_mask.tscn" id="19_cegan"]
+[ext_resource type="PackedScene" path="res://scenes/props/mustache_glasses.tscn" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://utjqs2lnpt2d" path="res://scenes/props/key.tscn" id="22_d13ii"]
 [ext_resource type="Texture2D" uid="uid://hjjpf1msvtv7" path="res://textures/WARNING-1.png" id="23_0odxb"]
 [ext_resource type="Texture2D" uid="uid://dpkms802odeql" path="res://textures/Since Last-1.png" id="24_lswn8"]
@@ -31,22 +31,22 @@
 [ext_resource type="AudioStream" uid="uid://b6sgrxvgcfc7n" path="res://audio/759772__aprilfern__crowd-chatter-in-indonesian.mp3" id="30_seu75"]
 [ext_resource type="PackedScene" uid="uid://cnyk3o7x6xwll" path="res://Models/key_door.tscn" id="31_htxhm"]
 [ext_resource type="PackedScene" uid="uid://kr7bi8j7iq7b" path="res://Models/first_door.tscn" id="31_seu75"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_1.tscn" id="32_wnkbs"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/shady_guy.tscn" id="33_4k2k6"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_2.tscn" id="33_f6a44"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_3.tscn" id="34_0cbny"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/bouncer.tscn" id="34_0rl1p"]
-[ext_resource type="PackedScene" uid="uid://bgry2gyu7c2v5" path="res://scenes/props/swim_mask.tscn" id="35_come4"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_4.tscn" id="35_hrvbo"]
-[ext_resource type="PackedScene" uid="uid://bv1eg75qvkksx" path="res://scenes/props/HorseMask.tscn" id="35_ok6jj"]
-[ext_resource type="PackedScene" uid="uid://202mxbcd3n5n" path="res://scenes/props/bird_mask.tscn" id="36_facbu"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_5.tscn" id="36_uypp3"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_6.tscn" id="37_blkrb"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_7.tscn" id="38_abqjc"]
-[ext_resource type="PackedScene" uid="uid://bleu32wrbfj44" path="res://scenes/props/swirly_mask.tscn" id="38_h8e4i"]
-[ext_resource type="PackedScene" uid="uid://4b2liutra0di" path="res://scenes/props/pirate_mask.tscn" id="39_4lmeg"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_8.tscn" id="39_6iyjs"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/party_goer_9.tscn" id="40_4w656"]
+[ext_resource type="PackedScene" uid="uid://dly4o2iphtwiq" path="res://scenes/npcs/party_goer_1.tscn" id="32_wnkbs"]
+[ext_resource type="PackedScene" uid="uid://ba8p2imy0fl48" path="res://scenes/npcs/shady_guy.tscn" id="33_4k2k6"]
+[ext_resource type="PackedScene" uid="uid://3r32pdqp5uh6" path="res://scenes/npcs/party_goer_2.tscn" id="33_f6a44"]
+[ext_resource type="PackedScene" uid="uid://b76g3yc8oibxq" path="res://scenes/npcs/party_goer_3.tscn" id="34_0cbny"]
+[ext_resource type="PackedScene" uid="uid://cb227lt6bmux8" path="res://scenes/npcs/bouncer.tscn" id="34_0rl1p"]
+[ext_resource type="PackedScene" path="res://scenes/props/swim_mask.tscn" id="35_come4"]
+[ext_resource type="PackedScene" uid="uid://nq7w8qdxl8xu" path="res://scenes/npcs/party_goer_4.tscn" id="35_hrvbo"]
+[ext_resource type="PackedScene" path="res://scenes/props/HorseMask.tscn" id="35_ok6jj"]
+[ext_resource type="PackedScene" path="res://scenes/props/bird_mask.tscn" id="36_facbu"]
+[ext_resource type="PackedScene" uid="uid://bu6yb4eyfsnqk" path="res://scenes/npcs/party_goer_5.tscn" id="36_uypp3"]
+[ext_resource type="PackedScene" uid="uid://c1ncxdkd2kscr" path="res://scenes/npcs/party_goer_6.tscn" id="37_blkrb"]
+[ext_resource type="PackedScene" uid="uid://cnh6idpcbhu1x" path="res://scenes/npcs/party_goer_7.tscn" id="38_abqjc"]
+[ext_resource type="PackedScene" path="res://scenes/props/swirly_mask.tscn" id="38_h8e4i"]
+[ext_resource type="PackedScene" path="res://scenes/props/pirate_mask.tscn" id="39_4lmeg"]
+[ext_resource type="PackedScene" uid="uid://bue7rmthwhutf" path="res://scenes/npcs/party_goer_8.tscn" id="39_6iyjs"]
+[ext_resource type="PackedScene" uid="uid://33w1vsk7tbun" path="res://scenes/npcs/party_goer_9.tscn" id="40_4w656"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryguw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -61,8 +61,6 @@ sky = SubResource("Sky_d13ii")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lquwl"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vivmo"]
 _surfaces = [{
@@ -138,10 +136,6 @@ environment = SubResource("Environment_1u8w0")
 [node name="Player" parent="." unique_id=1145453039 instance=ExtResource("1_0xm2m")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.1668193, 2.877503, 25.23577)
 
-[node name="player" type="MeshInstance3D" parent="." unique_id=1421908060]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9702258, 2.0842218, 24.9482)
-mesh = SubResource("CapsuleMesh_lquwl")
-
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1490163454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("ArrayMesh_vivmo")
@@ -149,7 +143,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xuqvo")
 
 [node name="Ceiling" type="MeshInstance3D" parent="." unique_id=1312592623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
 mesh = SubResource("ArrayMesh_yaehf")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1321204511]
@@ -1152,7 +1145,7 @@ transform = Transform3D(-0.70062286, 0, -0.7135318, 0, 1, 0, 0.7135318, 0, -0.70
 transform = Transform3D(-0.96352315, 0, -0.26762515, 0, 1, 0, 0.26762515, 0, -0.96352315, -7, 2.0398579, -21.5)
 
 [node name="PartyGoer7" parent="Party People" unique_id=69478801 instance=ExtResource("38_abqjc")]
-transform = Transform3D(0.8705534, 0, -0.49207407, 0, 1, 0, 0.49207407, 0, 0.8705534, -18.75, 3.1398578, -12.35)
+transform = Transform3D(0.8705534, 0, -0.49207407, 0, 1, 0, 0.49207407, 0, 0.8705534, -18.75, 3.1898577, -12.35)
 
 [node name="PartyGoer8" parent="Party People" unique_id=1906892524 instance=ExtResource("39_6iyjs")]
 transform = Transform3D(-0.2499913, 0, -0.96824807, 0, 1, 0, 0.96824807, 0, -0.2499913, -20.800001, 2.0398579, -22.550001)

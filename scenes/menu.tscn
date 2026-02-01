@@ -1,55 +1,77 @@
 [gd_scene format=3 uid="uid://chs62vv4herba"]
 
 [ext_resource type="Script" uid="uid://bkly5v50r6w28" path="res://scripts/menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://bdfw8uaauihnb" path="res://textures/image.jpg" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://vahuo7krpcg8" path="res://textures/TitleScreen.PNG" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://b17hqdbwar3dr" path="res://textures/RoutineMaintenance.png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://lrapa4u1ctnf" path="res://textures/Start.png" id="4_13sgg"]
+[ext_resource type="Texture2D" uid="uid://8hlwcd45x32f" path="res://textures/Start_Highlighted.png" id="5_i6lef"]
+[ext_resource type="Texture2D" uid="uid://bohhpxnjl5tsu" path="res://textures/Quit.png" id="6_70i5f"]
+[ext_resource type="Texture2D" uid="uid://ci2ecfx4b5teg" path="res://textures/Quit_Highlighted.png" id="7_mj5lg"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="8_ufwb2"]
 
-[node name="Menu" type="Node2D" unique_id=816631627]
+[node name="Menu" type="Control" unique_id=378558216]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_con2f")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1334377778]
-offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=612401652]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="." unique_id=612401652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("2_con2f")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Logo" type="TextureRect" parent="." unique_id=993237674]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 61.0
+offset_right = 403.0
+offset_bottom = 219.12999
+texture = ExtResource("3_con2f")
 expand_mode = 5
+stretch_mode = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=115634453]
-layout_mode = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 920
-theme_override_constants/margin_bottom = 80
+[node name="Start" type="TextureButton" parent="." unique_id=486023401]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 240.0
+offset_right = 337.0
+offset_bottom = 292.0
+texture_normal = ExtResource("4_13sgg")
+texture_hover = ExtResource("5_i6lef")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1602113979]
-layout_mode = 2
-theme_override_constants/separation = 30
+[node name="Quit" type="TextureButton" parent="." unique_id=457482256]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 309.0
+offset_right = 333.0
+offset_bottom = 357.0
+texture_normal = ExtResource("6_70i5f")
+texture_hover = ExtResource("7_mj5lg")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Logo" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer2" unique_id=993237674]
-layout_mode = 2
-texture = ExtResource("1_vjb58")
-expand_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer2" unique_id=139601232]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1555473223]
-layout_mode = 2
-text = "Start"
-
-[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1358194867]
-layout_mode = 2
-text = "Quit"
-
-[node name="Version" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2" unique_id=311863404]
-layout_mode = 2
-size_flags_horizontal = 0
+[node name="Version" type="Label" parent="." unique_id=311863404]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 683.0
+offset_right = 290.0
+offset_bottom = 705.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("8_ufwb2")
 text = "Made for Global Game Jam 2026"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

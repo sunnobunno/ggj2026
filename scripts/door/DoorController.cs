@@ -17,8 +17,8 @@ public partial class DoorController : Node3D, IClickable
 	private void OpenDoor()
 	{
 		var finalRotation = new Vector3(0f, Mathf.DegToRad(-85f), 0f);
-        doorPlayer.Play();
-        var tween = GetTree().CreateTween();
+		doorPlayer.Play();
+		var tween = GetTree().CreateTween();
 		tween.SetTrans(Tween.TransitionType.Spring);
 		tween.SetEase(Tween.EaseType.Out);
 		tween.TweenProperty(this, "rotation", finalRotation, 1f);
