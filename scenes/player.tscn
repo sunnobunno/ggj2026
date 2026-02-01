@@ -58,7 +58,7 @@ targetRestingHeight = 1.645
 springStrength = 100.0
 springDamp = 10.0
 jumpStrength = 3.855
-maxSpeed = 2.2
+maxSpeed = 2.5
 moveAccel = 8.88
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=139983962]
