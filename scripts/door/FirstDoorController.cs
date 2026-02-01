@@ -4,6 +4,8 @@ using System;
 
 public partial class FirstDoorController : Node3D, IClickable
 {
+	[Export] AudioStreamPlayer3D doorSound;
+	
 	bool isActive = true;
 	public bool IsActive { get => isActive; set => isActive = value; }
 
@@ -27,6 +29,7 @@ public partial class FirstDoorController : Node3D, IClickable
 	{
 		if (isOpen) return;
 		isOpen = true;
+		doorSound.Play();
 		var tween = GetTree().CreateTween();
 		tween.SetTrans(Tween.TransitionType.Spring);
 		tween.SetEase(Tween.EaseType.Out);
