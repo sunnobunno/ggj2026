@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kb0cupw4s2xe"
-path.s3tc="res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"
+uid="uid://vrvigjnwril"
+path.s3tc="res://.godot/imported/shadyDude1.png-553982b8d06bbc6b7e3a8c675e8f94ef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/NPCS/Alien_2b.png"
-dest_files=["res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"]
+source_file="res://textures/NPCS/shadyDude1.png"
+dest_files=["res://.godot/imported/shadyDude1.png-553982b8d06bbc6b7e3a8c675e8f94ef.s3tc.ctex"]
 
 [params]
 

@@ -7,19 +7,25 @@
 [ext_resource type="Texture2D" uid="uid://bee82fdxex8sb" path="res://textures/items/key.png" id="4_irm0w"]
 [ext_resource type="Script" uid="uid://cb2qaqlrhx0ay" path="res://scripts/door/DoorController.cs" id="6_nbqhf"]
 [ext_resource type="Script" uid="uid://hmr2xquq4l7e" path="res://scripts/door/MaskDoorController.cs" id="7_goqn8"]
-[ext_resource type="PackedScene" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
-[ext_resource type="PackedScene" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
-[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="9_d5d0g"]
+[ext_resource type="PackedScene" uid="uid://b7sox62nq0sci" path="res://scenes/props/gas_mask.tscn" id="7_r0dxp"]
+[ext_resource type="PackedScene" uid="uid://darelvawqm5qu" path="res://scenes/props/mustache_glasses.tscn" id="8_rr2cc"]
 [ext_resource type="PackedScene" uid="uid://bv1eg75qvkksx" path="res://scenes/props/HorseMask.tscn" id="10_ur8j8"]
-[ext_resource type="Texture2D" uid="uid://c5o0g2chdv0w5" path="res://textures/NPCS/Alien_2.png" id="10_vxqot"]
-[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="11_cisaw"]
 [ext_resource type="PackedScene" uid="uid://4b2liutra0di" path="res://scenes/props/pirate_mask.tscn" id="11_j1rmp"]
 [ext_resource type="PackedScene" uid="uid://bleu32wrbfj44" path="res://scenes/props/swirly_mask.tscn" id="12_2qf0b"]
-[ext_resource type="Texture2D" uid="uid://kb0cupw4s2xe" path="res://textures/NPCS/Alien_2b.png" id="12_d5d0g"]
 [ext_resource type="PackedScene" uid="uid://bgry2gyu7c2v5" path="res://scenes/props/swim_mask.tscn" id="13_shx8k"]
-[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="13_totjt"]
 [ext_resource type="PackedScene" uid="uid://202mxbcd3n5n" path="res://scenes/props/bird_mask.tscn" id="14_l4ahx"]
-[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="14_msnxs"]
+[ext_resource type="PackedScene" path="res://scenes/testing/npc.tscn" id="15_goqn8"]
+[ext_resource type="PackedScene" uid="uid://dly4o2iphtwiq" path="res://scenes/npcs/party_goer_1.tscn" id="16_shx8k"]
+[ext_resource type="PackedScene" uid="uid://3r32pdqp5uh6" path="res://scenes/npcs/party_goer_2.tscn" id="17_kfmmi"]
+[ext_resource type="PackedScene" uid="uid://b76g3yc8oibxq" path="res://scenes/npcs/party_goer_3.tscn" id="18_tt5cn"]
+[ext_resource type="PackedScene" uid="uid://nq7w8qdxl8xu" path="res://scenes/npcs/party_goer_4.tscn" id="19_wla0y"]
+[ext_resource type="PackedScene" uid="uid://bu6yb4eyfsnqk" path="res://scenes/npcs/party_goer_5.tscn" id="20_nwo5w"]
+[ext_resource type="PackedScene" uid="uid://c1ncxdkd2kscr" path="res://scenes/npcs/party_goer_6.tscn" id="21_lxghf"]
+[ext_resource type="PackedScene" uid="uid://cnh6idpcbhu1x" path="res://scenes/npcs/party_goer_7.tscn" id="22_gpp3b"]
+[ext_resource type="PackedScene" uid="uid://bue7rmthwhutf" path="res://scenes/npcs/party_goer_8.tscn" id="23_4ceh7"]
+[ext_resource type="PackedScene" uid="uid://33w1vsk7tbun" path="res://scenes/npcs/party_goer_9.tscn" id="24_dy4e5"]
+[ext_resource type="PackedScene" uid="uid://cb227lt6bmux8" path="res://scenes/npcs/bouncer.tscn" id="25_tt5cn"]
+[ext_resource type="PackedScene" uid="uid://ba8p2imy0fl48" path="res://scenes/npcs/shady_guy.tscn" id="26_wla0y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
 albedo_color = Color(0.43134022, 0.43134025, 0.43134025, 1)
@@ -267,6 +273,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.671983, 1.5722845, 0.959075
 [node name="BirdMask" parent="." unique_id=1388738197 instance=ExtResource("14_l4ahx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.671983, 1.5722845, -1.0427432)
 
+<<<<<<< Updated upstream
 [node name="NPC" type="StaticBody3D" parent="." unique_id=447272865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8486762, 1.1031139, 5.3392215)
 
@@ -301,3 +308,41 @@ script = ExtResource("14_msnxs")
 npcText = "Hello.... H. hhI"
 gasMaskText = "Wowww.. Lookin... Gassy"
 moustacheGlassesText = "OH! sorry mist er.."
+=======
+[node name="NPC2" parent="." unique_id=814922849 instance=ExtResource("15_goqn8")]
+transform = Transform3D(0.86142534, 0, 0.50788426, 0, 1, 0, -0.50788426, 0, 0.86142534, -1.6656053, 1.2011076, 6.8420997)
+visible = false
+
+[node name="PartyGoer1" parent="." unique_id=238456714 instance=ExtResource("16_shx8k")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -8.415046, 1.2011074, 6.9210725)
+
+[node name="PartyGoer2" parent="." unique_id=1201303024 instance=ExtResource("17_kfmmi")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -5.8138504, 1.2011074, 8.3277)
+
+[node name="PartyGoer3" parent="." unique_id=857771442 instance=ExtResource("18_tt5cn")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.108032, 1.2011074, 4.2996287)
+
+[node name="PartyGoer4" parent="." unique_id=971086253 instance=ExtResource("19_wla0y")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, 1.4248087)
+
+[node name="PartyGoer5" parent="." unique_id=19943402 instance=ExtResource("20_nwo5w")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, -1.3048809)
+
+[node name="PartyGoer6" parent="." unique_id=1395198179 instance=ExtResource("21_lxghf")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, -3.6924205)
+
+[node name="PartyGoer7" parent="." unique_id=69478801 instance=ExtResource("22_gpp3b")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, -5.856443)
+
+[node name="PartyGoer8" parent="." unique_id=1906892524 instance=ExtResource("23_4ceh7")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, -8.092123)
+
+[node name="PartyGoer9" parent="." unique_id=311188196 instance=ExtResource("24_dy4e5")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -9.270992, 1.2011071, -10.207364)
+
+[node name="Bouncer" parent="." unique_id=204560513 instance=ExtResource("25_tt5cn")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -6.1315227, 1.2011071, -10.207364)
+
+[node name="ShadyGuy" parent="." unique_id=896628509 instance=ExtResource("26_wla0y")]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, -3.1432343, 1.2011071, -10.207364)
+>>>>>>> Stashed changes

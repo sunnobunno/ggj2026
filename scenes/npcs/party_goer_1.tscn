@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dly4o2iphtwiq"]
+
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="1_782w6"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_v3qh7"]
+[ext_resource type="Texture2D" uid="uid://qy4e1ulw884g" path="res://textures/NPCS/alieen.png" id="3_2qh4b"]
+[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="4_mtyvu"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="5_nsei0"]
+[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="6_jmi3j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5d0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_totjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qf0b"]
+render_priority = 0
+shader = ExtResource("2_v3qh7")
+shader_parameter/color = ExtResource("3_2qh4b")
+shader_parameter/base_color = Color(0.4817894, 0.48178953, 0.4817894, 1)
+shader_parameter/snap_factor = 50.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="PartyGoer1" type="StaticBody3D" unique_id=238456714]
+transform = Transform3D(0.86142534, 0, 0.50788426, 0, 1, 0, -0.50788426, 0, 0.86142534, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=789713336]
+shape = SubResource("CapsuleShape3D_d5d0g")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=2062608326]
+transform = Transform3D(-0.76025856, 0, 0.6496206, 0, 1, 0, -0.6496206, 0, -0.76025856, 0, 0, 0)
+script = ExtResource("1_782w6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=506210579]
+transform = Transform3D(1.7650002, 0, -5.9604645e-08, 0, 1.765, 0, 5.9604645e-08, 0, 1.7650002, 0.19007206, -0.3527285, -0.033480644)
+mesh = SubResource("QuadMesh_totjt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_2qf0b")
+script = ExtResource("4_mtyvu")
+frames = Array[Texture2D]([ExtResource("3_2qh4b")])
+
+[node name="Text Bubbles" type="Node3D" parent="." unique_id=1750710334]
+
+[node name="Node3D" type="Node3D" parent="Text Bubbles" unique_id=1284670453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1892097, 0)
+
+[node name="Label3D" type="Label3D" parent="Text Bubbles/Node3D" unique_id=1614199106]
+billboard = 1
+alpha_scissor_threshold = 0.49
+alpha_hash_scale = 0.0
+text = "Testing 123"
+font = ExtResource("5_nsei0")
+outline_size = 14
+script = ExtResource("6_jmi3j")
+npcText = "wow hi"

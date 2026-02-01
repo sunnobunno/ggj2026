@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kb0cupw4s2xe"
-path.s3tc="res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"
+uid="uid://c3uo1w7bqq5x8"
+path.s3tc="res://.godot/imported/Michael1.png-5805b0e130e022ac4b2d0b1231946d41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/NPCS/Alien_2b.png"
-dest_files=["res://.godot/imported/Alien_2b.png-93eb903b929ef421ab4f5abdf0e0e68e.s3tc.ctex"]
+source_file="res://textures/NPCS/Michael1.png"
+dest_files=["res://.godot/imported/Michael1.png-5805b0e130e022ac4b2d0b1231946d41.s3tc.ctex"]
 
 [params]
 

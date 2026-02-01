@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ba8p2imy0fl48"]
+
+[ext_resource type="Script" uid="uid://ddxwq7b6twwui" path="res://scripts/billboard/Billboard.cs" id="1_khsh6"]
+[ext_resource type="Shader" uid="uid://c0s5qmrnag64q" path="res://materials/shaders/VertSnapTexture.gdshader" id="2_0iroh"]
+[ext_resource type="Texture2D" uid="uid://di351jnn3g4rs" path="res://textures/NPCS/shadyDude0.png" id="3_gtmjr"]
+[ext_resource type="Script" uid="uid://bpetf3o6j7w0p" path="res://scripts/billboard/NPCImage.cs" id="4_cbhbw"]
+[ext_resource type="Texture2D" uid="uid://vrvigjnwril" path="res://textures/NPCS/shadyDude1.png" id="5_vs2h8"]
+[ext_resource type="FontFile" uid="uid://qytpfg7nvt6q" path="res://fonts/Minecraft.ttf" id="6_6ve8v"]
+[ext_resource type="Script" uid="uid://b760bhm4jydfa" path="res://scripts/npcs/NPCtextbubbleConditional.cs" id="7_xysta"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5d0g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_totjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhl3u"]
+render_priority = 0
+shader = ExtResource("2_0iroh")
+shader_parameter/color = ExtResource("3_gtmjr")
+shader_parameter/base_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/snap_factor = 100.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/snap = true
+
+[node name="ShadyGuy" type="StaticBody3D" unique_id=896628509]
+transform = Transform3D(0.86142534, 0, 0.5078842, 0, 1, 0, -0.5078842, 0, 0.86142534, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1356479120]
+shape = SubResource("CapsuleShape3D_d5d0g")
+
+[node name="Billboard" type="Node3D" parent="." unique_id=1103437130]
+transform = Transform3D(-0.76025856, 0, 0.6496206, 0, 1, 0, -0.6496206, 0, -0.76025856, 0, 0, 0)
+script = ExtResource("1_khsh6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Billboard" unique_id=1983489050]
+transform = Transform3D(2.425, 0, 0, 0, 2.425, 0, 0, 0, 2.425, 0, 0, 0)
+mesh = SubResource("QuadMesh_totjt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_dhl3u")
+script = ExtResource("4_cbhbw")
+frames = Array[Texture2D]([ExtResource("3_gtmjr"), ExtResource("5_vs2h8")])
+
+[node name="Text Bubbles" type="Node3D" parent="." unique_id=2086790723]
+
+[node name="Node3D" type="Node3D" parent="Text Bubbles" unique_id=151267326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1892097, 0)
+
+[node name="Label3D" type="Label3D" parent="Text Bubbles/Node3D" unique_id=1660936695]
+billboard = 1
+alpha_scissor_threshold = 0.49
+alpha_hash_scale = 0.0
+text = "Testing 123"
+font = ExtResource("6_6ve8v")
+outline_size = 14
+script = ExtResource("7_xysta")
+npcText = "i got what you need ;)"
+moustacheGlassesText = "CLASSIC choice... nerd"
+birdMaskText = "not my first choice byut o k"
+swirlyText = "WOAH hey how many fingers amn i holding up"
+horseText = "WHO LET A HORSE IN HERE"
+swimText = "gonna go for a swim in the tank?"
+pirateText = "my favorite mask ;) watch out for... boo ty.."

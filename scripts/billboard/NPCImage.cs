@@ -16,9 +16,10 @@ public partial class NPCImage : MeshInstance3D
 
     private void AnimateKey(double delta)
     {
+        var n = frames.Length;
         t += (float)delta * speed;
 
-        var frameIndex = (int)t % 2;
+        var frameIndex = (int)t % n;
         var frame = frames[frameIndex];
 
         var material = (ShaderMaterial)GetSurfaceOverrideMaterial(0);

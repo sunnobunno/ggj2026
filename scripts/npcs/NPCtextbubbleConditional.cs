@@ -12,9 +12,13 @@ public partial class NPCtextbubbleConditional : Label3D
     [Export] string swimText;
     [Export] string pirateText;
 
+    float randSpeed;
 
     public override void _Ready()
     {
+        var rng = new RandomNumberGenerator();
+        randSpeed = rng.Randf() + 3f;
+        
         Text = npcText;
         AnimateText();
     }
@@ -107,12 +111,12 @@ public partial class NPCtextbubbleConditional : Label3D
 
         var tween = GetTree().CreateTween();
         tween.SetTrans(Tween.TransitionType.Linear);
-        tween.TweenProperty(this, "position", finalPosition, 5f);
+        tween.TweenProperty(this, "position", finalPosition, randSpeed + 1f);
         tween.TweenCallback(Callable.From(AnimateText));
 
         var tween2 = GetTree().CreateTween();
         tween2.SetTrans(Tween.TransitionType.Expo);
         tween2.SetEase(Tween.EaseType.In);
-        tween2.TweenProperty(this, "transparency", 1f, 4f);
+        tween2.TweenProperty(this, "transparency", 1f, randSpeed);
     }
 }
