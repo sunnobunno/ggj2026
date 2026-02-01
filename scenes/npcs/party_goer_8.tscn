@@ -52,6 +52,6 @@ text = "Testing 123"
 font = ExtResource("5_4mq86")
 outline_size = 14
 script = ExtResource("6_018rc")
-npcText = "ppbpbpbbbbtthh"
+npcText = "SURPRISE!"
 moustacheGlassesText = "hey uhh what if we put our minecraft beds next to each other"
 birdMaskText = "cant poke my eyes out, i dont have any!"
