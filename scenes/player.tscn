@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://c5inaevnnvmw4" path="res://textures/items/key1.png" id="16_fulsm"]
 [ext_resource type="Texture2D" uid="uid://do0qm3at2ov15" path="res://textures/overlays/swimOverlay.png" id="17_pf23h"]
 [ext_resource type="Texture2D" uid="uid://cd1shvve3ardq" path="res://textures/overlays/pirateOverlay.png" id="18_dt7fs"]
+[ext_resource type="Script" path="res://scripts/characterController/FootSteps.cs" id="26_31cv2"]
+[ext_resource type="AudioStream" uid="uid://bs0qruvtu2eh7" path="res://audio/769965__izuzikistaaana__heels-on-tile.wav" id="27_pf23h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4r1p"]
 friction = 0.25
@@ -191,4 +193,9 @@ offset_bottom = 40.0
 [node name="Inventory" type="Node3D" parent="." unique_id=1643111454]
 script = ExtResource("14_f1ej7")
 
-[node name="SoundManager" type="Node3D" parent="." unique_id=1398802180]
+[node name="SoundManager" type="Node3D" parent="." unique_id=1398802180 node_paths=PackedStringArray("player")]
+script = ExtResource("26_31cv2")
+player = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SoundManager" unique_id=65182606]
+stream = ExtResource("27_pf23h")
