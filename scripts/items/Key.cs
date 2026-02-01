@@ -15,20 +15,20 @@ public partial class Key : Node3D, IClickable
         PickUpKey();
     }
 
-    public void LeftRelease(Vector3? position)
-    {
-        
-    }
+	public void LeftRelease(Vector3? position)
+	{
+		
+	}
 
-    public void RightClick(Vector3? position)
-    {
-        
-    }
+	public void RightClick(Vector3? position)
+	{
+		
+	}
 
-    public void RightRelease(Vector3? position)
-    {
-        
-    }
+	public void RightRelease(Vector3? position)
+	{
+		
+	}
 
     private void PickUpKey()
     {

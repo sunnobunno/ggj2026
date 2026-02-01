@@ -54,3 +54,7 @@ font = ExtResource("6_xtfrg")
 outline_size = 14
 script = ExtResource("7_nufd3")
 npcText = "gorpy..."
+moustacheGlassesText = "you are truly after my own heart"
+birdMaskText = "HEY dont get too close! friend not food"
+swirlyText = "gorpolicious broski"
+pirateText = "yee shall gorp the plank!"
